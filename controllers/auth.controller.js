@@ -49,7 +49,7 @@ exports.signin = (req, res) => {
     let token = jwt.sign({ id: user.id }, config.secret, {
       expiresIn: config.jwtExpiration,
     });
-    let refreshToken = await RefreshToken.createToken(user);
+    // let refreshToken = await RefreshToken.createToken(user);
 
     // req.session.token = token;
 
@@ -58,7 +58,7 @@ exports.signin = (req, res) => {
       name: user.name,
       email: user.email,
       accessToken: token,
-      refreshToken: refreshToken,
+      // refreshToken: refreshToken,
     });
   });
 };
