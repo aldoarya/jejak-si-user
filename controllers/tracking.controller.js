@@ -15,8 +15,7 @@ exports.trackEvent = (req, res) => {
 
   if (!app_id || !event_name) {
     return res.status(400).send({
-      message:
-        "No App ID or Event Name is Given",
+      message: "No App ID or Event Name is Given",
     });
   } else {
     const track = new Tracker({
@@ -38,5 +37,19 @@ exports.trackEvent = (req, res) => {
         res.status(200).send({ message: `Tracked ${event_name} Succesfully` });
       }
     });
+  }
+};
+
+exports.getTrackEventByID = async (req, res) => {
+  const id = req.params.id;
+
+  const queryTrackEvent = await Tracker.find({ app_id: id });
+
+  if (!id) {
+    return res.status(400).send({
+      message: "No App ID is Given",
+    });
+  } else {
+    res.status(200).send({ queryTrackEvent });
   }
 };

@@ -6,4 +6,5 @@ module.exports = function (app) {
   });
 
   app.post("/api/track", controller.trackEvent);
+  app.get("/api/track/:id", controller.getTrackEventByID);
 };
