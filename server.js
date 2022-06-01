@@ -27,7 +27,7 @@ app.use(
 );
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Fundwise Backend Application." });
+  res.json({ message: "Welcome to JejakSiUser Backend Application." });
 });
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
@@ -37,3 +37,4 @@ app.listen(PORT, () => {
 
 // Add Routes
 require("./routes/auth.routes")(app);
+require("./routes/tracking.routes")(app);

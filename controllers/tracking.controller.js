@@ -13,10 +13,10 @@ exports.trackEvent = (req, res) => {
     event_value,
   } = req.body;
 
-  if (!app_id || !event_name || !event_category || !event_action) {
+  if (!app_id || !event_name) {
     return res.status(400).send({
       message:
-        "No App ID, Event Name, Event Category, or Event Action is Given",
+        "No App ID or Event Name is Given",
     });
   } else {
     const track = new Tracker({
