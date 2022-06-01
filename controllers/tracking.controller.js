@@ -50,6 +50,6 @@ exports.getTrackEventByID = async (req, res) => {
       message: "No App ID is Given",
     });
   } else {
-    res.status(200).send({ queryTrackEvent });
+    res.status(200).send(queryTrackEvent);
   }
 };
