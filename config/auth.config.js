@@ -1,3 +1,3 @@
 module.exports = {
-  secret: "fundwise-secret-key",
+  secret: "jejak-secret-key",
 };
